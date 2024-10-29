@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  ArquiteturaAppTest
@@ -11,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .darkGray
         // Do any additional setup after loading the view.
     }
 
