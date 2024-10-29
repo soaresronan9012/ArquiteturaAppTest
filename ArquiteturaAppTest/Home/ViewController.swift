@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var vcScreen: VCScreen? // var do tipo da view alvo
+    
+    override func loadView() {
+        vcScreen = VCScreen() // instancia a view
+        view = vcScreen  // torna a view alvo como a view dessa controller
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        
         // Do any additional setup after loading the view.
     }
 
