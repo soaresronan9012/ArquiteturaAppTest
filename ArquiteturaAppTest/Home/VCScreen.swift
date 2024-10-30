@@ -9,18 +9,20 @@ import UIKit
 
 class VCScreen: UIView {
     
-    
-    lazy var collectionView : UICollectionView = {
-        let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    // criaccao da primeira collectionView 
+    lazy var collectionView : UICollectionView = { //mostra uma coleção de itens organizados em células
+        let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout() //organiza itens em uma grade (grid). É o layout mais básico e comum para uma CollectionView. define o layout (a disposição dos itens)
         layout.scrollDirection = .horizontal // direcao
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        //frame: .zero significa que a CollectionView está sendo inicializada sem um tamanho específico aqui (o tamanho será definido mais tarde).
+        //collectionViewLayout: layout é onde você aplica o layout que criamos antes (horizontal, com organização em grid).
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false // desabilita a barra de rolagem
-        collectionView.backgroundColor = .clear
-        
+        collectionView.backgroundColor = .systemGray
         return collectionView
         }()
         
+
     public func configProtocolCollectionView(delegate : UICollectionViewDelegate, dataSource : UICollectionViewDataSource )  {
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
@@ -30,8 +32,9 @@ class VCScreen: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .red
+        backgroundColor = .appBackground  // tipo da extensao criada
         addElements()
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -44,10 +47,7 @@ class VCScreen: UIView {
     }
     
     func configConstraints() {
-        NSLayoutConstraint.activate([
-            
-            
-        ])
+        collectionView.pin( to: self) // funcao da extensao, que contem as constraints / self é a propria view
     }
     
 }
