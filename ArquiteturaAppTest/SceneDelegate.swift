@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return } // criou uma window
         let window = UIWindow(windowScene: windowScene) // instanciou essa window criada acima
-        let vc = ViewController() // instanviou a viewcontroller root
+        let vc = ViewController() // instanciou a viewcontroller root
         let navigationController = UINavigationController(rootViewController: vc) // criou uma navigation
         window.rootViewController = navigationController // a controller root é passada aqui
         self.window = window

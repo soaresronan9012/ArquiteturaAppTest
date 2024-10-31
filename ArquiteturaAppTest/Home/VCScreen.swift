@@ -26,8 +26,7 @@ class VCScreen: UIView {
     public func configProtocolCollectionView(delegate : UICollectionViewDelegate, dataSource : UICollectionViewDataSource )  {
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
-    }
-    
+    } //Esse método configProtocolCollectionView serve para configurar a collectionView para que ela saiba quem vai gerenciar os eventos e os dados que ela precisa mostrar. 
     
     
     override init(frame: CGRect) {

@@ -14,7 +14,7 @@ extension UIView { // extensao desse arquivo / tem que ser UIView
     
     func pin(to superView: UIView) { // funcao que contem a extensao / UIView sera um self qualquer passado
         translatesAutoresizingMaskIntoConstraints = false // desabilita o autolayout
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([  // layout onde todos valores sao 0
             topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor),
             bottomAnchor.constraint(equalTo: superView.bottomAnchor),
             leadingAnchor.constraint(equalTo: superView.leadingAnchor),
