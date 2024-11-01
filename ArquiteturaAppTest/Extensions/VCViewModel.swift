@@ -10,12 +10,12 @@ import UIKit
 class VCViewModel{ // ciracao da ViewModel, onde fica toda logica da camada view
     
     public var numberOfItems: Int {
-        return 2
+        return 1
     }
     
     public func sizeForItem(indexPath: IndexPath, frame: CGRect) -> CGSize {
         if indexPath.row == 0 {  // logica se é a primeira celula, faça
-            return CGSize(width: 120, height: frame.height)
+            return CGSize(width: 120, height: frame.height) // tamanho da celula
             }
         else { // se nao faca aqui
             return CGSize(width: frame.width - 120, height: frame.height)

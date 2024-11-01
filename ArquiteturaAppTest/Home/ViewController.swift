@@ -23,10 +23,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
 
+    
     // ambos padrao do sitema, assim que assinar o protocolo, ja se pede esses métodos
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.numberOfItems // da camada viewmodel, onde esta a logica
@@ -34,7 +33,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell() // cira uma instancia
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCardCollectionViewCell.identifier, for: indexPath) as? StoryCardCollectionViewCell
+        /*busca uma célula que já foi criada e está disponível para reutilização, reduzindo a criação de novas instâncias e melhorando o desempenho. Ele usa dois parâmetros:
+        withReuseIdentifier: o identificador de reuso da célula, que deve ser uma String registrada anteriormente com register(_:forCellWithReuseIdentifier:). Aqui, estamos usando StoryCardCollectionViewCell.identifier para obter essa String.
+        for: o indexPath da célula, que indica a posição da célula na coleção.*/
+        
+        return cell ?? UICollectionViewCell()
+        //Esse código garante que sempre será retornada uma célula válida, seja a célula personalizada StoryCardCollectionViewCell ou uma célula padrão UICollectionViewCell em caso de falha.
+        
         
         //método obrigatório do protocolo UICollectionViewDataSource, que define como uma UICollectionView deve configurar e exibir suas células. O método collectionView(_:cellForItemAt:) é responsável por criar e configurar cada célula que aparecerá em uma UICollectionView
     }

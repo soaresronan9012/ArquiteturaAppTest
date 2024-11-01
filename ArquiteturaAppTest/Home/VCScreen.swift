@@ -18,6 +18,8 @@ class VCScreen: UIView {
         //collectionViewLayout: layout é onde você aplica o layout que criamos antes (horizontal, com organização em grid).
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false // desabilita a barra de rolagem
+        // REGISTRAR CELULA CRIADA
+        collectionView.register(StoryCardCollectionViewCell.self, forCellWithReuseIdentifier: StoryCardCollectionViewCell.identifier)
         collectionView.backgroundColor = .systemGray
         return collectionView
         }()
